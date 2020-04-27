@@ -46,7 +46,6 @@
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-            <!-- Override tabIconTint attribute of style with selector -->
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
                 style="@style/Widget.MaterialComponents.TabLayout.Colored"

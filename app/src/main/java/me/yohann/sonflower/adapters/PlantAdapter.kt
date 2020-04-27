@@ -3,9 +3,11 @@ package me.yohann.sonflower.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import me.yohann.sonflower.HomeViewPagerFragmentDirections
 import me.yohann.sonflower.data.Plant
 import me.yohann.sonflower.databinding.ListItemPlantBinding
 
@@ -35,7 +37,11 @@ class PlantAdapter : ListAdapter<Plant, RecyclerView.ViewHolder>(PlantDiffCallba
             plant: Plant,
             view: View
         ) {
-//            val directions
+            val directions =
+                HomeViewPagerFragmentDirections.actionViewPagerFragmentToPlantDetailFragment(
+                    plant.plantId
+                )
+            view.findNavController().navigate(directions)
         }
 
         fun bind(item: Plant) {
@@ -44,7 +50,6 @@ class PlantAdapter : ListAdapter<Plant, RecyclerView.ViewHolder>(PlantDiffCallba
                 executePendingBindings()
             }
         }
-
     }
 }
 
