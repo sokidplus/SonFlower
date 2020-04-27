@@ -2,6 +2,7 @@ package me.yohann.sonflower
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import me.yohann.sonflower.databinding.ActivityGardenBinding
 
 class GardenActivity : AppCompatActivity() {
 

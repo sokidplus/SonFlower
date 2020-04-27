@@ -1,11 +1,11 @@
 package me.yohann.sonflower.data
 
-import androidx.room.TypeConverters
-import java.util.*
+import androidx.room.TypeConverter
+import java.util.Calendar
 
 class Converters {
-    @TypeConverters fun calenderToDateStamp(calender: Calendar): Long = calender.timeInMillis
+    @TypeConverter fun calendarToDatestamp(calendar: Calendar): Long = calendar.timeInMillis
 
-    @TypeConverters fun dataStampToCalendar(value: Long): Calendar =
+    @TypeConverter fun datestampToCalendar(value: Long): Calendar =
         Calendar.getInstance().apply { timeInMillis = value }
 }
